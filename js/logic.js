@@ -51,13 +51,10 @@ function onClickInsert(){
         alert("Salvo com Sucesso!");
     }
 }
-function updateTask(cep,bairro,logradouro,localidade,uf,description,key){
+function updateTask(cep,bairro,description,key){
     db.ref('task/'+key).update({
         cep:cep,
         bairro:bairro,
-        logradouro:logradouro,
-        localidade:localidade,
-        uf:uf,
         description:description,
         date:dateActuality()
     });
@@ -65,16 +62,13 @@ function updateTask(cep,bairro,logradouro,localidade,uf,description,key){
 function onClickUpdate(){
     var cep = value("cepEdit");
     var bairro = value("bairroEdit");
-    var logradouro = value("logradouroEdit");
-    var localidade = value("localidadeEdit");
-    var uf = value("ufEdit");
     var description = value("descEdit");
     var key = value("key"); 
-    if(cep.length==0 || bairro.length==0 || logradouro.length==0 || localidade.length==0 || uf.length==0 || description.length==0){ 
+    if(cep.length==0 || bairro.length==0 || description.length==0){ 
         alert("Campo em branco!"); 
     }else{ 
         inHTML("loadTable","");
-        updateTask(cep,bairro,logradouro,localidade,uf,description,key); 
+        updateTask(cep,bairro,description,key); 
         inHTML("editData","");
         alert("Alterado com Sucesso!");
         update.disabled = true;
@@ -86,20 +80,21 @@ function removeTask(key){
         db.ref('task/'+key).remove();
     }
 }
-function table(cep,bairro,logradouro,localidade,uf,description,date,key){
-    return '<tr><td>'+cep+'</td><td>'+bairro+'</td><td>'+logradouro+'</td><td>'+localidade+'</td><td>'+uf+'</td><td>'+description+'</td><td>'+date+'</td>'+
-    '<td><a href="#" onclick="viewDataUpdate(\''+cep+'\',\''+bairro+'\',\''+logradouro+'\',\''+localidade+'\',\''+uf+'\',\''+description+'\',\''+key+'\')">'+
+function table(cep,bairro,description,date,key){
+    return '<tr><td>'+cep+'</td><td>'+bairro+'</td><td>'+description+'</td><td>'+date+'</td>'+
+    '<td><a href="#" onclick="viewDataUpdate(\''+cep+'\',\''+bairro+'\',\''+description+'\',\''+key+'\')">'+
     '<i class="fas fa-edit blue icon-lg"></i></a></td>'+
     '<td><a href="#" onclick="removeTask(\''+key+'\')">'+
      '<i class="fas fa-trash-alt red icon-lg"></i></a></td></tr>';
 }
-function viewDataUpdate(cep,bairro,logradouro,localidade,uf,description,key){
+function viewDataUpdate(cep,bairro,description,key){
     var response = '<div class="form-group"><input type="hidden" value='+key+' id="key">' +
     '<input type="text" id="cepEdit" class="form-control" placeholder="CEP" value='+cep+'>'+
     '</div>'+
     '<div class="form-group">'+
     '<textarea placeholder="BairroEdit" class="form-control" id="bairroEdit">'+bairro+'</textarea>'+
     '</div>'+
+    /*
     '<div class="form-group">'+
     '<textarea placeholder="LogradouroEdit" class="form-control" id="logradouroEdit">'+logradouro+'</textarea>'+
     '</div>'+
@@ -109,6 +104,7 @@ function viewDataUpdate(cep,bairro,logradouro,localidade,uf,description,key){
     '<div class="form-group">'+
     '<textarea placeholder="UFEdit" class="form-control" id="ufEdit">'+uf+'</textarea>'+
     '</div>'+
+    */
     '<div class="form-group">'+
     '<textarea placeholder="DescriptionEdit" class="form-control" id="descEdit">'+description+'</textarea>'+
     '</div>';
@@ -119,7 +115,7 @@ var reference = db.ref('task/');
 reference.on('value',function(datas){
     var data = datas.val();
     $.each(data, function(nodo, value) {
-            var sendData = table(value.cep,value.bairro,value.logradouro,value.localidade,value.uf,value.description,value.date,nodo);
+            var sendData = table(value.cep,value.bairro,value.description,value.date,nodo);
             printHTML('loadTable',sendData);
     });       
 });
