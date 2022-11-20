@@ -80,8 +80,8 @@ function removeTask(key){
         db.ref('task/'+key).remove();
     }
 }
-function table(cep,bairro,description,date,key){
-    return '<tr><td>'+cep+'</td><td>'+bairro+'</td><td>'+description+'</td><td>'+date+'</td>'+
+function table(cep,bairro,description,key){
+    return '<tr><td>'+cep+'</td><td>'+bairro+'</td><td>'+description+'</td><td>'+/*+date+'</td>'+*/
     '<td><a href="#" onclick="viewDataUpdate(\''+cep+'\',\''+bairro+'\',\''+description+'\',\''+key+'\')">'+
     '<i class="fas fa-edit blue icon-lg"></i></a></td>'+
     '<td><a href="#" onclick="removeTask(\''+key+'\')">'+
@@ -115,7 +115,7 @@ var reference = db.ref('task/');
 reference.on('value',function(datas){
     var data = datas.val();
     $.each(data, function(nodo, value) {
-            var sendData = table(value.cep,value.bairro,value.description,value.date,nodo);
+            var sendData = table(value.cep,value.bairro,value.description,nodo);
             printHTML('loadTable',sendData);
     });       
 });
