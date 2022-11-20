@@ -37,7 +37,7 @@ body{
 /* Classes Reutilizaveis */
 
 .container{
-max-width: 1440px;
+/*max-width: 1440px;*/
 padding: 0 5%;
 margin: 0 auto;
 }
@@ -117,7 +117,7 @@ main .container{
 }
 
 .main-text{
-    padding: 0px 60px;
+    /*padding: 0px 60px;*/
     width: 100%;
     background-color: white;
     color: red;
@@ -126,12 +126,12 @@ main .container{
 }
 
 .main-text h2{
- width: 100%;
- text-align: center;
+ width: 90%;
+ text-align: justify;
 }
 
 .main-text a{
-    width: auto;
+    width: 100%;
     justify-content: space-between;
 }
 
@@ -179,9 +179,7 @@ main .container{
 }
 
 .main-text img{
-    width: 100%;
-    display: block;
-  
+    width: 60%;  
 }
 
 .main-img{
