@@ -47,6 +47,12 @@ margin: 0 auto;
     padding: 0 5%;
     margin: 0 auto;
     }
+    .container-img{
+        width: 80%;
+        margin: 10px 10px;
+        display: flex;
+        justify-content: space-between;
+    }
 
 .btn-gradiente{
     padding: 10px 25px;
@@ -124,6 +130,11 @@ main .container{
  text-align: center;
 }
 
+.main-text a{
+    width: auto;
+    justify-content: space-between;
+}
+
 .denunciar{
     display: flex;
 }
@@ -146,6 +157,9 @@ main .container{
 }
 
 .main-text p{
+    width: 100%;
+    margin: 10px auto;
+    padding: 0 auto;
     text-align: justify;
     align-items: center;
     font-size: 18px;
@@ -175,15 +189,21 @@ main .container{
 }
 
 .main-img-vermelha P{
-  color:#ff0000;
+    text-align: center;
+    color:#ff0000;
+    font-size: 14px;
 }
 
 .main-img-amarela P{
-  color:#c6c011;
+    text-align: center;
+    color:#c6c011;
+    font-size: 14px;
 } 
 
 .main-img-verde P{
-  color:#2f9364;
+    text-align: center;
+    color:#2f9364;
+    font-size: 14px;
 } 
 
 .main-img-dengue{
@@ -212,15 +232,13 @@ main .container{
 }
 
 .main-img p{
-   
     padding: 25px;
-    text-align: justify;
+    text-align: center;
 }
 
 .main-iframe{
     width: 100%;
     margin: 10px;
-
 }
 
 .tit-proj{
