@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Consulta Zona de Risco para Dengue">
+    <meta name="keywords" content="Dengue, Univesp, Projeto Integrador 8, UX Design, UI Design">
+    <meta name="author" content="fbi">
+    <meta name="generation" content="Visual Studio Code">
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Consultar Zonas de Risco</title>
+</head>
+<body>
+    <div class="background-verde">
+        <!-- Header -->
+        <header>
+            <!-- Container -->
+            <div class="container">
+                <nav>
+                    <div class="logo">
+                        <a href="index.html">Projeto Integrador VIII</a>
+                    </div>
+                    <ul class="ul">
+                        <li><a href="./index.html">Home</a></li>
+                        <li><a href="./sobre.html">Sobre o projeto</a></li>
+                        <li><a href="./Integrantes.html">Integrantes</a></li>
+                        
+                    </ul>
+                </nav>
+            </div>
+            <!-- Fim Container-->
+        </header>
+        <!-- Fim Header -->
+    </div>
+    <!-- Main -->
+    <main>
+        <center>
+            <li><a href="./cadastro.html"><button class="btn-gradiente">Denunciar Zonas de Risco</button></a></li>
+        </center>
+        <div class="titulo">
+            <h1>Consultar Zona de Risco para Dengue</h1>
+            <h2>Município de Boituva - SP</h2>
+            <div class="legenda">
+                <a class="vermelho"> ( Vermelho - Foco Encontrado ) - </a>
+                <a class="amarelo"> ( Amarelo - Agua Parada ) - </a>
+                <a class="verde"> ( Verde - OK ) </a>
+            <div>
+                <h1>Zonas de Risco - Cadastradas</h1><br>
+        </div>   
+
+        <div class="container">  
+            <table class="">
+                <thead class="">
+                    <tr>
+                        <th>CEP</th>
+                        <th>Bairro</th>
+                        <th>Logradouro</th>
+                        <th>Localidade</th>
+                        <th>UF</th>
+                        <th>Zona (Cor)</th>
+                        <th>Data</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                    <tbody id="loadTable"></tbody>
+                    <a id="update"></a>
+                </thead>
+ 
+                   
+            </table>        
+             
+        </div>  
+                
+        
+        <style>
+            table{
+                margin: auto;
+                background-color: black;
+            }
+
+            thead{
+                width: 80%;
+            }
+
+            td,tr,th{
+                text-align: center;
+                padding: 10px;
+                font-size: 12px;
+                color: white;
+            }
+
+            th{
+                color: red;
+            }
+
+            h1{
+                text-align: center;
+            }
+        </style>
+
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
+        <script src="./js/firebase.js"></script>
+        <script src="./js/logic.js"></script>
+    </main>
+    <!-- Fim do Main-->      
+
+
+</body>
+</html>

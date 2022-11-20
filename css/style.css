@@ -1,0 +1,272 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,600;0,700;0,900;1,100;1,800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;700&family=Roboto:wght@100;300;400;500;700;900&family=Source+Sans+Pro:wght@200;300;400;600;700;900&display=swap');
+
+
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+text-decoration: none;
+list-style: none;
+font-family: 'Poppins', sans-serif;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Poppins', sans-serif;
+    background-color: rgba(0,0,0,0.1);
+}
+
+:root{
+    --verde-escuro: #14424b;
+    --verde: #2f9364;
+    --orange: #ff7c37;
+    --degrade-btn: linear-gradient(#d45f4d, #ff0000);
+    --cgrade-btn: linear-gradient(#959653, #c6c011);
+    --color-p: #a1a1a1;
+    --color-p-2: #868585;
+}
+
+.background-verde{
+    background: var(--verde-escuro);
+}
+
+/* Classes Reutilizaveis */
+
+.container{
+max-width: 1440px;
+padding: 0 5%;
+margin: 0 auto;
+}
+
+.containercad{
+    max-width: 1440px;
+    padding: 0 5%;
+    margin: 0 auto;
+    }
+
+.btn-gradiente{
+    padding: 10px 25px;
+    color: white;
+    border: none;
+    cursor: pointer;
+    background-image: var(--degrade-btn);
+}
+
+.btn-gradiente1{
+    padding: 10px 25px;
+    color: white;
+    border: none;
+    cursor: pointer;
+    background-image: var(--cgrade-btn);
+}
+
+
+/* Classes do Site */
+
+nav{
+    justify-content: space-between;  
+    padding: 50px 0;
+}
+
+.logo a{
+    align-items: center;
+    text-align: center;
+    display: block;
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+    background-color: rgb(242, 4, 4);
+}
+
+.ul{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.ul li{
+    font-size: 15px;
+}
+
+.li a{
+    display: flex;
+    justify-content: center;
+}
+
+.ul li a{
+    color: white;
+}
+
+/* Main */
+
+main .container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.main-text{
+    padding: 0px 60px;
+    width: 100%;
+    background-color: white;
+    color: red;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main-text h2{
+ width: 100%;
+ text-align: center;
+}
+
+.denunciar{
+    display: flex;
+}
+
+.titulo{
+    text-align: center;
+}
+
+.titulo h1{
+    background-color: white;
+}
+
+.titulo h2{
+    background-color: white;
+}
+
+.main-text h1{
+    font-size: 2rem;
+    text-align: center;
+}
+
+.main-text p{
+    text-align: justify;
+    align-items: center;
+    font-size: 18px;
+    color: black;
+}
+
+.main-text h2{
+    padding: 20px;
+    align-items: center;
+    font-size: 22px;
+    align-items: center;
+}
+
+.main-text div{
+    align-items: center;
+    margin-top: 20px;
+}
+
+.main-text img{
+    width: 100%;
+    display: block;
+  
+}
+
+.main-img{
+   width: 90%;
+}
+
+.main-img-vermelha P{
+  color:#ff0000;
+}
+
+.main-img-amarela P{
+  color:#c6c011;
+} 
+
+.main-img-verde P{
+  color:#2f9364;
+} 
+
+.main-img-dengue{
+    width: 45%;
+    height: 45%;
+}
+
+.main-img-dengue img{
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.main-img-dengue p{
+    width: 100%;
+    height: 100%;
+    color: white;
+    background: black;
+    padding: 20px;
+    text-align: justify;
+}
+
+.main-img img{
+    width: 100%;
+    align-items: center;
+}
+
+.main-img p{
+   
+    padding: 25px;
+    text-align: justify;
+}
+
+.main-iframe{
+    width: 100%;
+    margin: 10px;
+
+}
+
+.tit-proj{
+  padding: 20px;
+  font-size: 12px;
+  margin-top: 20px;
+  color: white;
+  text-align: center;
+}
+
+.tit-proj h1{
+    color: #ff0000;
+}
+
+.tit-proj h2{
+    color: black;
+}
+
+button {
+    cursor: pointer;
+  }
+  
+  .vermelho{
+    color:#ff0000;
+  }
+
+  .amarelo{
+    color:#c6c011;
+  }
+
+  .verde{
+    color:#2f9364;
+  }
+
+  .cadzonas{
+    width: 100%;
+  }
+
+  .zona_cor{
+    background-color:white;
+    color: black;
+    font-size: 20px;
+  }
+
+ul li .white{color: #fff;}
+.inpSearch{ border: 5px solid #eee; border-radius: 5px; }
+.icon-lg{font-size: 19px;}
+.red {color: red;}
+.blue{color: blue;}

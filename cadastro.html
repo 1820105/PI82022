@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Consulta Zona de Risco para Dengue">
+    <meta name="keywords" content="Dengue, Univesp, Projeto Integrador 8, UX Design, UI Design">
+    <meta name="author" content="fbi">
+    <meta name="generation" content="Visual Studio Code">
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Denunciar Zonas de Risco</title>
+</head>
+<body>
+    <div class="background-verde">
+        <!-- Header -->
+        <header>
+            <!-- Containercad -->
+            <div class="containercad">
+                <nav>
+                    <div class="logo">
+                        <a href="index.html">Projeto Integrador VIII</a>
+                    </div>
+                    <ul class="ul">
+                        <li><a href="./index.html">Home</a></li>
+                        <li><a href="./sobre.html">Sobre o projeto</a></li>
+                        <li><a href="./Integrantes.html">Integrantes</a></li>
+                        
+                    </ul>
+                </nav>
+            </div>
+            <!-- Fim Containercad-->
+        </header>
+        <!-- Fim Header -->
+    </div>
+    <!-- Main -->
+    <main>
+        <div class="titulo">
+                    <h2 style="background-color: red">Zona de Risco para Dengue - Município de Boituva - SP</h2>
+        <div>
+                <a style = "color: red">( Vermelho - Foco Encontrado ) - </a>
+                <a style ="color: rgb(169, 169, 3)"> ( Amarelo - Agua Parada ) - </a>
+                <a style = "color: green"> ( Verde - OK ) </a>
+            <div>
+        </div>   
+        <br>
+    </main>
+    <div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="text-left">
+                        <center>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalTask">
+                            Adicionar Zona de Risco
+                        </button>
+                        <a href="./consulta.html"><button class="btn-gradiente1">Consulta Zonas de Risco</button></a>
+                        </center>   
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <hr>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="form-group">
+                    <!--
+                        <div class="text-right">
+                          <input type="text" id="search" class="inpSearch" placeholder="Buscar">
+                        </div>
+                    -->
+                    </div>
+                    <div class="form-group">
+                        <table class="table table-sm table-bordered text-left">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th>CEP</th>
+                                    <th>Bairro</th>
+                                    <th>Logradouro</th>
+                                    <th>Localidade</th>
+                                    <th>UF</th>
+                                    <th>Zona (Cor)</th>
+                                    <th>Data</th>
+                                    <th></th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody id="loadTable"></tbody>
+                        </table>
+                        <style>
+                            table{
+                                margin: auto;
+                                background-color: black;
+                            }
+                
+                            td,tr,th{
+                                text-align: center;
+                                padding: 10px;
+                                font-size: 12px;
+                            }
+                
+             
+                        </style>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="form-group">
+                                <div class="text-left">
+                                    <h5>Editar</h5>
+                                </div>
+                                <div class="text-right">
+                                    <button type="button" class="btn btn-warning" onclick="onClickUpdate()" id="update">Atualizar</button>
+                                </div>
+                            </div>
+                            <div id="editData"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+        <!-- Modal -->
+        <div class="modal fade" id="modalTask" tabindex="-1" role="dialog" aria-labelledby="modalTask" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modalTask">Cadastrar Zona de Risco</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <input type="text" id="cep" class="form-control" placeholder="CEP">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="bairro" class="form-control" placeholder="Bairro">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="logradouro" class="form-control" placeholder="Logradouro">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="localidade" class="form-control" placeholder="Localidade">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="uf" class="form-control" placeholder="UF">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-group" for="zona_cor">Zona de risco (Cor)</label>
+                            <select class="form-group" type="text" placeholder="Zona (Cor)" name="zona_cor" id="desc">
+                                <option value=""></option> 
+                                <option value="Vermelha"> Zona Vermelha </option>                  
+                                <option value="Amarela"> Zona Amarela   </option>
+                                <option value="Verde"> Zona Verde       </option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Sair</button>
+                        <button type="button" class="btn btn-success" onclick="onClickInsert()">Salvar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+            crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+            crossorigin="anonymous"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
+        <script src="./js/firebase.js"></script>
+        <script src="./js/logic.js"></script>
+        <script defer src="https://use.fontawesome.com/releases/v5.7.1/js/all.js" integrity="sha384-eVEQC9zshBn0rFj4+TU78eNA19HMNigMviK/PU/FFjLXqa/GKPgX58rvt5Z8PLs7"
+            crossorigin="anonymous"></script>
+    
+            
+
+
+
+        <!-- INICIO SCRIPT CEP -->
+        <script>
+            const cep = document.getElementById("cep");
+            cep.addEventListener("blur", (e) => {
+            let Cep = document.getElementById("cep").value;
+            let search = cep.value.replace("-","")
+            fetch(`https://viacep.com.br/ws/${search}/json/`).then((response) => {
+                response.json().then(data => {
+                    document.getElementById("bairro").value = data.bairro;
+                    document.getElementById("logradouro").value = data.logradouro;
+                    document.getElementById("localidade").value = data.localidade;
+                    document.getElementById("uf").value = data.uf;
+
+                    console.log(data)
+                })
+            })
+        })
+
+        function enviar() {
+            let bairro = document.getElementById("bairro").value;
+            let logradouro = document.getElementById("logradouro").value;
+            let localidade = document.getElementById("localidade").value;
+            let uf = document.getElementById("uf").value;
+            let zona_cor = document.getElementById("zona_cor").value;
+
+            let json = {
+                "bairro": bairro,
+                "logradouro": logradouro,
+                "localidade": localidade,
+                "uf": uf,
+                "zona_cor": zona_cor,
+            }
+            console.log(json)
+        }
+       
+        </script>
+        <!-- FIM SCRIPT CEP -->
+   
+    </body>
+</html>
